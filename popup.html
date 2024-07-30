@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Google Maps Scraper</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            min-width: 800px; /* Increased width for better visibility */
+            padding: 20px;
+            font-family: 'Poppins', sans-serif;
+            background-color: #1b1b3a; /* Midnight purple background */
+            color: #ffffff;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: auto;
+        }
+
+        #container {
+            background-color: #2b2b5a; /* Lighter midnight purple */
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+            width: 100%;
+            max-width: 800px; /* Increased max width */
+            text-align: center;
+            overflow-x: auto; /* Enable horizontal scrolling */
+        }
+
+        h1 {
+            font-weight: 600;
+            font-size: 22px;
+            margin: 0;
+            color: #edfdd0; /* Bright highlight color */
+        }
+
+        h4 {
+            margin: 0;
+            padding-top: 10px;
+            color: #cccccc;
+        }
+
+        h4 a {
+            color: #b4e6fd; /* Light blue color for links */
+            text-decoration: none;
+        }
+
+        h4 a:hover {
+            color: #ff80ab; /* Light pink for hover effect */
+            text-decoration: none;
+        }
+
+        #message {
+            font-size: 16px;
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+
+        .button {
+            padding: 10px 20px;
+            border: none;
+            color: #ffffff;
+            background-color: #6200ea; /* Main button color */
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            border-radius: 30px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 16px;
+        }
+
+        .button:disabled {
+            background-color: #aaa;
+            cursor: not-allowed;
+        }
+
+        .button:hover {
+            background-color: #7a00ff; /* Hover color */
+        }
+
+        .button:active {
+            transform: scale(0.98);
+        }
+
+        .input {
+            padding: 10px;
+            margin-right: 10px;
+            border: 1px solid #444;
+            border-radius: 30px;
+            background-color: #2a2a5a; /* Input field background color */
+            color: #ffffff;
+            font-family: 'Poppins', sans-serif;
+            font-size: 16px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #444;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #3a3a5a; /* Table header background */
+            color: #ffffff;
+        }
+
+        td {
+            background-color: #2b2b5a; /* Table cell background */
+            color: #ffffff;
+        }
+
+        #loadingText {
+            display: none;
+            padding-top: 10px;
+            font-size: 14px;
+            color: #ffeb3b;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>&#x1F30F; Google Maps Scraper 2.0</h1>
+        <h4>
+            <a href="https://thefuturenow.us" target="_blank">By Axee's</a>
+            <a href="https://thefuturenow.us" target="_blank">Haris & Awais :)</a>
+        </h4>
+        <div id="message">Checking URL...</div>
+        <button id="actionButton" class="button" disabled>Scrape Google Maps</button>
+        <button id="downloadCsvButton" class="button" style="margin-left: 10px;" disabled>Download as CSV</button>
+        <input type="text" id="filenameInput" class="input" placeholder="Enter file name" style="margin-left: 10px;" />
+        <table id="resultsTable">
+            <thead>
+                <tr></tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+        <div id="loadingText">Wait till your data is being scraped!</div>
+    </div>
+    <script src="popup.js"></script>
+</body>
+</html>
